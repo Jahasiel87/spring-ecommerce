@@ -65,8 +65,7 @@ public class DetalleOrden {
 	}
 	public void setTotal(double total) {
 		this.total = total;
-	}
-	
+	}	
 	
 	public Orden getOrden() {
 		return orden;
