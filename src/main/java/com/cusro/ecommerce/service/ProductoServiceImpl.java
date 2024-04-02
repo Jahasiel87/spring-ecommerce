@@ -1,5 +1,6 @@
 package com.cusro.ecommerce.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import com.cusro.ecommerce.repository.IProductoRepository;
 
 @Service
 public class ProductoServiceImpl implements IProductoService {
+	
 	
 	@Autowired
 	private IProductoRepository productoRepository;
@@ -35,6 +37,12 @@ public class ProductoServiceImpl implements IProductoService {
 		productoRepository.deleteById(id);
 		
 
+	}
+
+	@Override
+	public List<Producto> findAll() {
+
+		return productoRepository.findAll();
 	}
 
 }
