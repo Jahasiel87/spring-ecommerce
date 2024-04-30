@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.cusro.ecommerce.model.DetalleOrden;
 import com.cusro.ecommerce.model.Orden;
 import com.cusro.ecommerce.model.Producto;
+import com.cusro.ecommerce.model.Usuario;
 import com.cusro.ecommerce.service.IProductoService;
+import com.cusro.ecommerce.service.IUsuarioService;
 
 @Controller
 @RequestMapping("/")
@@ -28,6 +30,9 @@ public class HomeController {
 	
 	@Autowired
 	private IProductoService productoService;
+	
+	@Autowired
+	private IUsuarioService usuarioService;
 	
 	//Para almacenar los detalles de la orden
 	List<DetalleOrden> detalles=new ArrayList<DetalleOrden>();
@@ -143,7 +148,13 @@ public class HomeController {
 	}
 	
 	@GetMapping("/order")
-	public String order() {
+	public String order(Model model) {
+		
+		Usuario usuario=usuarioService.findById(1).get();
+		
+		model.addAttribute("cart", detalles);
+		model.addAttribute("orden", orden);
+		model.addAttribute("usuario", usuario);
 		
 		return "usuario/resumen_orden";
 	}
