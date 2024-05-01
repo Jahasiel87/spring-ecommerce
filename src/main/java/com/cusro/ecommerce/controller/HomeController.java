@@ -1,6 +1,7 @@
 package com.cusro.ecommerce.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +20,8 @@ import com.cusro.ecommerce.model.DetalleOrden;
 import com.cusro.ecommerce.model.Orden;
 import com.cusro.ecommerce.model.Producto;
 import com.cusro.ecommerce.model.Usuario;
+import com.cusro.ecommerce.service.IDetalleOrdenService;
+import com.cusro.ecommerce.service.IOrdenService;
 import com.cusro.ecommerce.service.IProductoService;
 import com.cusro.ecommerce.service.IUsuarioService;
 
@@ -33,6 +36,12 @@ public class HomeController {
 	
 	@Autowired
 	private IUsuarioService usuarioService;
+	
+	@Autowired
+	private IOrdenService ordenService;
+	
+	@Autowired
+	private IDetalleOrdenService detalleOrdenService;
 	
 	//Para almacenar los detalles de la orden
 	List<DetalleOrden> detalles=new ArrayList<DetalleOrden>();
@@ -157,6 +166,39 @@ public class HomeController {
 		model.addAttribute("usuario", usuario);
 		
 		return "usuario/resumen_orden";
+	}
+	
+	@GetMapping("/saveOrder")
+	public String saveOrder() {    //Guardar la orden
+		
+		Date fechaCreacion = new Date();
+		
+		orden.setFechaCreacion(fechaCreacion);
+		orden.setNumero(ordenService.generarNumeroOrden());
+		
+		//Usuario
+		
+		Usuario usuario=usuarioService.findById(1).get();
+		
+		orden.setUsuario(usuario);
+		ordenService.save(orden);
+		
+		//Guardar detalles
+		
+		for(DetalleOrden dt:detalles) {
+			
+			dt.setOrden(orden);
+			
+			detalleOrdenService.save(dt);
+		}
+
+		//Limpiar lista y orden
+		
+		orden=new Orden();
+		
+		detalles.clear();
+		
+		return "redirect:/";
 	}
 	
 }
