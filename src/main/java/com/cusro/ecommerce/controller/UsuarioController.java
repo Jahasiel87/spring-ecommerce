@@ -115,7 +115,7 @@ public class UsuarioController {
 		model.addAttribute("sesion", session.getAttribute("idusuario"));
 		
 		
-		return "usuario/detallecompra";
+		return "usuario/detalle_compra";
 	}
 	
 	
