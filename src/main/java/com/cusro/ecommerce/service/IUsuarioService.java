@@ -1,10 +1,13 @@
 package com.cusro.ecommerce.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.cusro.ecommerce.model.Usuario;
 
 public interface IUsuarioService {
+	
+	List<Usuario> findAll();
 	
 	Optional<Usuario> findById(Integer id);
 	
