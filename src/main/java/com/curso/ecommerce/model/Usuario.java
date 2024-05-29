@@ -1,13 +1,17 @@
-package com.cusro.ecommerce.model;
+package com.curso.ecommerce.model;
+
 
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name = "usuarios")
@@ -15,6 +19,7 @@ public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Integer id;
 	private String nombre;
 	private String username;
@@ -23,18 +28,19 @@ public class Usuario {
 	private String telefono;
 	private String tipo;
 	private String password;
-	
+  	
 	@OneToMany(mappedBy = "usuario")
 	private List<Producto> productos;
 	
 	@OneToMany(mappedBy = "usuario")
 	private List<Orden> ordenes;
 	
+			
 	public Usuario() {
-	}
-	
+	}	
+
 	public Usuario(Integer id, String nombre, String username, String email, String direccion, String telefono,
-			String tipo, String password) {
+			String tipo, String password, List<Producto> productos, List<Orden> ordenes) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -44,7 +50,12 @@ public class Usuario {
 		this.telefono = telefono;
 		this.tipo = tipo;
 		this.password = password;
+		this.productos = productos;
+		this.ordenes = ordenes;
 	}
+
+
+
 	public Integer getId() {
 		return id;
 	}
@@ -100,12 +111,22 @@ public class Usuario {
 
 	public void setProductos(List<Producto> productos) {
 		this.productos = productos;
+	}	
+
+	public List<Orden> getOrdenes() {
+		return ordenes;
+	}
+
+	public void setOrdenes(List<Orden> ordenes) {
+		this.ordenes = ordenes;
 	}
 
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nombre=" + nombre + ", username=" + username + ", email=" + email
 				+ ", direccion=" + direccion + ", telefono=" + telefono + ", tipo=" + tipo + ", password=" + password
-				+ "]";
+				+ ", productos=" + productos + ", ordenes=" + ordenes + "]";
 	}
+	
+	
 }

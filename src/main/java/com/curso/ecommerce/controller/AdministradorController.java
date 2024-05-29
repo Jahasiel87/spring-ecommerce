@@ -1,4 +1,4 @@
-package com.cusro.ecommerce.controller;
+package com.curso.ecommerce.controller;
 
 import java.util.List;
 
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.cusro.ecommerce.model.Orden;
-import com.cusro.ecommerce.model.Producto;
-import com.cusro.ecommerce.service.IOrdenService;
-import com.cusro.ecommerce.service.IProductoService;
-import com.cusro.ecommerce.service.IUsuarioService;
+import com.curso.ecommerce.model.Orden;
+import com.curso.ecommerce.model.Producto;
+import com.curso.ecommerce.service.IOrdenService;
+import com.curso.ecommerce.service.IProductoService;
+import com.curso.ecommerce.service.IUsuarioService;
 
 @Controller
 @RequestMapping("/administrador")

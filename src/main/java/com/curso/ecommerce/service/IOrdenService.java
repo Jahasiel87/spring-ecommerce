@@ -1,10 +1,10 @@
-package com.cusro.ecommerce.service;
+package com.curso.ecommerce.service;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.cusro.ecommerce.model.Orden;
-import com.cusro.ecommerce.model.Usuario;
+import com.curso.ecommerce.model.Orden;
+import com.curso.ecommerce.model.Usuario;
 
 public interface IOrdenService {
 	

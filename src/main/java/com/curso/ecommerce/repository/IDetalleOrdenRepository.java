@@ -1,9 +1,9 @@
-package com.cusro.ecommerce.repository;
+package com.curso.ecommerce.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.cusro.ecommerce.model.DetalleOrden;
+import com.curso.ecommerce.model.DetalleOrden;
 
 @Repository
 public interface IDetalleOrdenRepository extends JpaRepository<DetalleOrden, Integer>{

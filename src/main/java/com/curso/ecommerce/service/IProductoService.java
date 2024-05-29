@@ -1,10 +1,9 @@
-package com.cusro.ecommerce.service;
+package com.curso.ecommerce.service;
 
 import java.util.List;
 import java.util.Optional;
 
-
-import com.cusro.ecommerce.model.Producto;
+import com.curso.ecommerce.model.Producto;
 
 
 public interface IProductoService {

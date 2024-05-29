@@ -1,10 +1,12 @@
-package com.cusro.ecommerce.controller;
+package com.curso.ecommerce.controller;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,16 +19,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.cusro.ecommerce.model.DetalleOrden;
-import com.cusro.ecommerce.model.Orden;
-import com.cusro.ecommerce.model.Producto;
-import com.cusro.ecommerce.model.Usuario;
-import com.cusro.ecommerce.service.IDetalleOrdenService;
-import com.cusro.ecommerce.service.IOrdenService;
-import com.cusro.ecommerce.service.IProductoService;
-import com.cusro.ecommerce.service.IUsuarioService;
+import com.curso.ecommerce.model.DetalleOrden;
+import com.curso.ecommerce.model.Orden;
+import com.curso.ecommerce.model.Producto;
+import com.curso.ecommerce.model.Usuario;
+import com.curso.ecommerce.service.IDetalleOrdenService;
+import com.curso.ecommerce.service.IOrdenService;
+import com.curso.ecommerce.service.IProductoService;
+import com.curso.ecommerce.service.IUsuarioService;
 
-import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/")

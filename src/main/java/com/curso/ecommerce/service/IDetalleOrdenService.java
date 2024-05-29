@@ -1,6 +1,6 @@
-package com.cusro.ecommerce.service;
+package com.curso.ecommerce.service;
 
-import com.cusro.ecommerce.model.DetalleOrden;
+import com.curso.ecommerce.model.DetalleOrden;
 
 public interface IDetalleOrdenService {
 

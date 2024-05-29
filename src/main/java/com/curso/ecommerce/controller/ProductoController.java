@@ -1,7 +1,9 @@
-package com.cusro.ecommerce.controller;
+package com.curso.ecommerce.controller;
 
 import java.io.IOException;
 import java.util.Optional;
+
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.cusro.ecommerce.model.Producto;
-import com.cusro.ecommerce.model.Usuario;
-import com.cusro.ecommerce.service.IProductoService;
-import com.cusro.ecommerce.service.IUsuarioService;
-import com.cusro.ecommerce.service.UploadFileService;
+import com.curso.ecommerce.model.Producto;
+import com.curso.ecommerce.model.Usuario;
+import com.curso.ecommerce.service.IProductoService;
+import com.curso.ecommerce.service.IUsuarioService;
+import com.curso.ecommerce.service.UploadFileService;
 
-import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/productos")

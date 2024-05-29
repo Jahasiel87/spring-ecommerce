@@ -1,4 +1,4 @@
-package com.cusro.ecommerce;
+package com.curso.ecommerce;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,4 +10,6 @@ public class SpringEcommerceApplication {
 		SpringApplication.run(SpringEcommerceApplication.class, args);
 	}
 
+	
+	    
 }

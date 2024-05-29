@@ -1,4 +1,4 @@
-package com.cusro.ecommerce.service;
+package com.curso.ecommerce.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cusro.ecommerce.model.Usuario;
-import com.cusro.ecommerce.repository.IUsuarioRepository;
+import com.curso.ecommerce.model.Usuario;
+import com.curso.ecommerce.repository.IUsuarioRepository;
 
 @Service
 public class UsuarioServiceImpl implements IUsuarioService {

@@ -1,10 +1,10 @@
-package com.cusro.ecommerce.service;
+package com.curso.ecommerce.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cusro.ecommerce.model.DetalleOrden;
-import com.cusro.ecommerce.repository.IDetalleOrdenRepository;
+import com.curso.ecommerce.model.DetalleOrden;
+import com.curso.ecommerce.repository.IDetalleOrdenRepository;
 
 @Service
 public class DetalleOrdenServiceImpl implements IDetalleOrdenService {
